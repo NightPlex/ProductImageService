@@ -29,4 +29,6 @@ Currently the repository has pipeline to the heroku app and has automatic builds
 ## Public version
 
 Swagger: https://product-image.herokuapp.com/api/swagger-ui.html
-Colour API: https://product-image.herokuapp.com/api/colours?searchQuery=outdoor
+Colour API: https://product-image.herokuapp.com/api/product/colours?searchQuery=outdoor
+
+Curl example: curl -X GET "https://product-image.herokuapp.com/api/product/colours?searchQuery=outdoor" -H "accept: */*"
