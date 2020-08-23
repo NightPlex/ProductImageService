@@ -22,20 +22,11 @@ $ cd productimage
 $ ./mvnw clean install
 ```
 
-## Deploying the application to OpenShift
+## Automatic deployments
 
-The easiest way to deploy the sample application to OpenShift is to use the [OpenShift CLI](https://docs.openshift.org/latest/cli_reference/index.html):
+Currently the repository has pipeline to the heroku app and has automatic builds from master branch.
 
-```shell
-oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app
-```
+## Public version
 
-This will create:
-
-* An ImageStream called "springboot-maven3-centos"
-* An ImageStream called "springboot-sample-app"
-* A BuildConfig called "springboot-sample-app"
-* DeploymentConfig called "springboot-sample-app"
-* Service called "springboot-sample-app"
-
-If you want to access the app from outside your OpenShift installation, you have to expose the springboot-sample-app service:
+Swagger: https://product-image.herokuapp.com/api/swagger-ui.html
+Colour API: https://product-image.herokuapp.com/api/colours?searchQuery=outdoor
