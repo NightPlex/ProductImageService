@@ -4,7 +4,7 @@ package com.example.productimage.dto.colour;
  * Built by Steven
  * Github: "https://github.com/NightPlex"
  **/
-public class Colors {
+public class Colours {
 
     private String hex;
 

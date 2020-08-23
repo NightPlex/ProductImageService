@@ -1,6 +1,6 @@
 package com.example.productimage.strategy;
 
-import com.example.productimage.dto.colour.ColorsResponse;
+import com.example.productimage.dto.colour.ColoursResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,14 +32,14 @@ public class ImageLookupStrategyTests {
     private RestTemplate template;
 
     @Test
-    public void testFetchColorsForImage() throws IOException {
+    public void testFetchColoursForImage() throws IOException {
         final ObjectMapper mapper = new ObjectMapper();
-        final ColorsResponse colorsResponse = mapper.readValue(new File("test_files/image_lookup.json"), ColorsResponse.class);
-        when(template.getForEntity(any(String.class), any(Class.class))).thenReturn(new ResponseEntity<>(colorsResponse, HttpStatus.OK));
-        final ColorsResponse result = imageLookupStrategy.fetchColorsForImage("https://test.com");
+        final ColoursResponse coloursResponse = mapper.readValue(new File("test_files/image_lookup.json"), ColoursResponse.class);
+        when(template.getForEntity(any(String.class), any(Class.class))).thenReturn(new ResponseEntity<>(coloursResponse, HttpStatus.OK));
+        final ColoursResponse result = imageLookupStrategy.fetchColoursForImage("https://test.com");
         assertThat(result)
                 .isNotNull()
-                .matches(colours -> colours.getColors()
+                .matches(colours -> colours.getColours()
                         .stream()
                         .anyMatch(colour -> colour.getHex().equals("#030202")));
     }

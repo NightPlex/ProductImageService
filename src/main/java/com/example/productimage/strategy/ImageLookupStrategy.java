@@ -1,8 +1,10 @@
 package com.example.productimage.strategy;
 
-import com.example.productimage.dto.colour.ColorsResponse;
+import com.example.productimage.dto.colour.ColoursResponse;
+import com.example.productimage.exceptions.GenericDataMissingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -21,9 +23,18 @@ public class ImageLookupStrategy {
     @Resource
     private RestTemplate restTemplate;
 
-    public ColorsResponse fetchColorsForImage(final String imageUri) {
-        final ResponseEntity<ColorsResponse> resultResponseEntity = restTemplate.getForEntity(buildUrlWithImageUri(imageUri), ColorsResponse.class);
-        return resultResponseEntity.getBody();
+    public ColoursResponse fetchColoursForImage(final String imageUri) {
+        try {
+
+            final ResponseEntity<ColoursResponse> resultResponseEntity = restTemplate.getForEntity(buildUrlWithImageUri(imageUri), ColoursResponse.class);
+            if (resultResponseEntity.getStatusCode().is2xxSuccessful()) {
+                return resultResponseEntity.getBody();
+            } else {
+                throw new GenericDataMissingException("Response from colour service was not 2xx, instead: " + resultResponseEntity.getStatusCode() + "image uri: " + imageUri);
+            }
+        } catch (final ResourceAccessException e) {
+            throw new GenericDataMissingException("There was an error connecting to the image with URL" + imageUri, e);
+        }
     }
 
     private String buildUrlWithImageUri(final String imageUri) {

@@ -1,6 +1,6 @@
 package com.example.productimage.service;
 
-import com.example.productimage.dto.colour.Colors;
+import com.example.productimage.dto.colour.Colours;
 import com.example.productimage.dto.product.ProductSearchResult;
 import com.example.productimage.dto.response.ProductImageColour;
 import com.example.productimage.dto.response.ProductImageResponse;
@@ -47,8 +47,8 @@ public class ProductImageColourService {
                      productImageColour.setProductCode(product.getProductCode());
                      productImageColour.setName(product.getName());
                      productImageColour.setImageUri(product.getDefaultImageUrls().getMainImageUrl());
-                     final List<Colors> colours = imageLookupStrategy.fetchColorsForImage(product.getDefaultImageUrls().getMainImageUrl()).getColors();
-                     productImageColour.setColors(colours);
+                     final List<Colours> colours = imageLookupStrategy.fetchColoursForImage(product.getDefaultImageUrls().getMainImageUrl()).getColours();
+                     productImageColour.setColours(colours);
                      return productImageColour;
                  })
                  .collect(Collectors.toList());

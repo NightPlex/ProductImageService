@@ -1,6 +1,6 @@
 package com.example.productimage.dto.response;
 
-import com.example.productimage.dto.colour.Colors;
+import com.example.productimage.dto.colour.Colours;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class ProductImageColour {
     private String productCode;
     private String name;
     private String imageUri;
-    private List <Colors> colors;
+    private List<Colours> colours;
 
 
     public String getProductCode() {
@@ -40,11 +40,11 @@ public class ProductImageColour {
         this.imageUri = imageUri;
     }
 
-    public List<Colors> getColors() {
-        return colors;
+    public List<Colours> getColours() {
+        return colours;
     }
 
-    public void setColors(List<Colors> colors) {
-        this.colors = colors;
+    public void setColours(List<Colours> colours) {
+        this.colours = colours;
     }
 }

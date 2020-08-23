@@ -1,0 +1,29 @@
+{
+  "productImageColours": [
+    {
+      "productCode": "5057-281",
+      "name": "White Mountain National Forest Map",
+      "imageUri": "https://cdn.mec.ca/medias/sys_master/fallback/fallback/8917829058590/5057281-NOC02-fallback.jpg",
+      "colors": [
+        {
+          "hex": "#0c0b0b"
+        },
+        {
+          "hex": "#493b32"
+        },
+        {
+          "hex": "#8d8c74"
+        },
+        {
+          "hex": "#adad91"
+        },
+        {
+          "hex": "#b1ced3"
+        },
+        {
+          "hex": "#d9e6f5"
+        }
+      ]
+    }
+  ]
+}
