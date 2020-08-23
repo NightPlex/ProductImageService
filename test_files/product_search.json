@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "default_image_urls": {
+        "main_image_url": "https://cdn.mec.ca/medias/sys_master/fallback/fallback/8917829058590/5057281-NOC02-fallback.jpg"
+      },
+      "product_code": "5057-281",
+      "name": "White Mountain National Forest Map"
+    }
+  ]
+}
