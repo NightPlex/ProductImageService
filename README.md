@@ -18,7 +18,7 @@ mvn spring-boot:run
 Lastly, you can use maven to build and test.
 
 ```shell
-$ cd productimage
+$ cd ProductImageService-master
 $ ./mvnw clean install
 ```
 
